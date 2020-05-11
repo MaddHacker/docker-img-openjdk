@@ -26,13 +26,13 @@ LABEL version="1.0.0" \
 
 RUN \
     # Install needed packages
-    apk -U add openjdk8<8.242.08-r2 && \
+    apk -U add 'openjdk8<8.242.08-r2' && \
     # Make our temp dir
     mkdir -p /tmp/java
 
 # Make `javac` work
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
-ENV PATH="$JAVA_HOME/bin:${PATH}"
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
+    PATH="$JAVA_HOME/bin:${PATH}"
 
 # Set the working dir
 WORKDIR /tmp/java
