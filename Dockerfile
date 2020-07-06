@@ -19,19 +19,23 @@
 
 FROM alpine:latest
 
-LABEL version="1.0.0" \
-        maintainer="MaddHacker" \
-        author="MaddHacker" \
-        description="Run openjdk on any machine without installation"
+LABEL version="11.0.0" \
+    maintainer="MaddHacker" \
+    author="MaddHacker" \
+    description="Run openjdk on any machine without installation"
+
+ARG JAVA_VERSION=11
+ARG JAVA_PACKAGE=openjdk11
+ARG JAVA_PACKAGE_VERSION=11.0.7_p10-r1
 
 RUN \
     # Install needed packages
-    apk -U add 'openjdk8<8.242.08-r2' && \
+    apk -U add "${JAVA_PACKAGE}<${JAVA_PACKAGE_VERSION}" && \
     # Make our temp dir
     mkdir -p /tmp/java
 
 # Make `javac` work
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
+ENV JAVA_HOME=/usr/lib/jvm/java-${JAVA_VERSION}-openjdk \
     PATH="$JAVA_HOME/bin:${PATH}"
 
 # Set the working dir

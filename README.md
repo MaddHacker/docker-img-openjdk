@@ -2,15 +2,16 @@
 This is built to create and use [Alpine-based](https://hub.docker.com/_/alpine) images so that installing Java on your physical machine is a thing of the past.
 
 ## Java Version
-This will start with [openjdk8](https://pkgs.alpinelinux.org/package/edge/community/ppc64le/openjdk8) and has the following tags:
+This will start with [openjdk1](https://pkgs.alpinelinux.org/package/edge/community/x86_64/openjdk11) and has the following tags:
 
-- `:8.242`, `:8` and `:latest` (OpenJDK 8)
+- `:11.0`, `:11` and `:latest` (OpenJDK 11)
+- `:8.242`, `:8` and `:latest` (OpenJDK 8) (see tags or DockerHub)
 
 ## Build it
 ```
-docker build -t maddhacker/openjdk:8.242 . \
-    && docker tag maddhacker/openjdk:8.242 maddhacker/openjdk:8 \
-    && docker tag maddhacker/openjdk:8.242 maddhacker/openjdk:latest
+docker build -t maddhacker/openjdk:11.0 . \
+    && docker tag maddhacker/openjdk:11.0 maddhacker/openjdk:11 \
+    && docker tag maddhacker/openjdk:11.0 maddhacker/openjdk:latest
 ```
 
 ## Bin files
