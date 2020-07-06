@@ -5,7 +5,7 @@ This is built to create and use [Alpine-based](https://hub.docker.com/_/alpine) 
 This will start with [openjdk1](https://pkgs.alpinelinux.org/package/edge/community/x86_64/openjdk11) and has the following tags:
 
 - `:11.0`, `:11` and `:latest` (OpenJDK 11)
-- `:8.242`, `:8` and `:latest` (OpenJDK 8) (see tags or DockerHub)
+- `:8.242` and `:8` (OpenJDK 8) (see tags or DockerHub)
 
 ## Build it
 ```
